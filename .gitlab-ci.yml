@@ -10,22 +10,13 @@ variables:
 
 job1:
   stage: test
-  script:
-    - echo "This is the test stage"
-    - echo "Current date: $(date)"
-    - echo "Pipeline ID: $CI_PIPELINE_ID"
-
+  script: echo "This is the test stage"
+    
 job2:
   stage: build
-  script:
-    - echo "Building the application..."
-    - echo $MESSAGE
-    - echo "Build completed successfully"
+  script: echo "Building the application..."
+    
 
 job3:
   stage: deploy
-  script:
-    - echo "Deploying to production"
-    - echo "Branch: $CI_COMMIT_BRANCH"
-    - echo "Commit: $CI_COMMIT_SHA"
-    - echo "Deployment finished"
+  script: echo "Deploying to production"
