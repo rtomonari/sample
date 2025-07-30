@@ -1,0 +1,31 @@
+# Simple GitLab CI configuration that echoes strings
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  MESSAGE: "Hello from GitLab CI!"
+
+job1:
+  stage: test
+  script:
+    - echo "This is the test stage"
+    - echo "Current date: $(date)"
+    - echo "Pipeline ID: $CI_PIPELINE_ID"
+
+job2:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - echo $MESSAGE
+    - echo "Build completed successfully"
+
+job3:
+  stage: deploy
+  script:
+    - echo "Deploying to production"
+    - echo "Branch: $CI_COMMIT_BRANCH"
+    - echo "Commit: $CI_COMMIT_SHA"
+    - echo "Deployment finished"
