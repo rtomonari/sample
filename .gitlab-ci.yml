@@ -11,12 +11,15 @@ variables:
 job1:
   stage: test
   script: echo "This is the test stage"
-    
+
 job2:
   stage: build
   script: echo "Building the application..."
-    
 
 job3:
+  stage: deploy
+  script: echo "Deploying to production"
+
+job4:
   stage: deploy
   script: echo "Deploying to production"
